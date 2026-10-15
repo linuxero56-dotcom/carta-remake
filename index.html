@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Para ti, con todo mi amor</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 1. CONTRASEÑA -->
+<section class="screen on" id="s1">
+  <div class="frame">
+    <div class="seal">💌</div>
+    <h1>Una carta para ti</h1>
+    <p class="sub">Para abrirla, escribe nuestra fecha especial</p>
+    <input id="pw" type="text" placeholder="¿Qué día fue?" autocomplete="off" autocapitalize="off">
+    <button class="btn" id="go">Abrir con cariño</button>
+    <p class="hint">Pista: es una fecha de enamorados 🌹</p>
+    <div id="broken">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <path class="l" d="M50 90 C20 66 8 48 8 32 C8 18 19 9 31 9 C40 9 47 14 50 21 L44 35 L56 48 L45 62 L52 74 Z" fill="#a8243f" stroke="#4a1020" stroke-width="2"/>
+        <path class="r" d="M50 21 C53 14 60 9 69 9 C81 9 92 18 92 32 C92 48 80 66 52 90 L58 74 L49 62 L60 48 L48 35 Z" fill="#c13a55" stroke="#4a1020" stroke-width="2"/>
+      </svg>
+      <p>Ay... esa no es. Inténtalo otra vez, mi amor 💔</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. CANCIÓN -->
+<section class="screen" id="s2">
+  <div class="frame">
+    <div class="vinyl" id="vinyl"></div>
+    <h1>Antes de leer...</h1>
+    <p class="sub">Ponte cómoda, dale play a nuestra canción y deja que ella te acompañe mientras lees 🎶</p>
+    <button class="btn" id="play">▶ Reproducir canción</button><br>
+    <button class="btn" id="open" style="background:transparent;color:var(--bordo);box-shadow:none">Abrir la carta ✉</button>
+    <p class="hint" id="songmsg"></p>
+  </div>
+</section>
+
+<!-- 3. CARTA -->
+<section class="screen" id="s3" style="justify-content:flex-start">
+  <button class="mini" id="mini" title="Pausar / reproducir">♪</button>
+  <article class="letter">
+    <h2>Mi querida Ceci</h2>
+    <div class="orn">❦ ❦ ❦</div>
+    <p>Mi amor, 🌙❤️ mientras la luna siga en el cielo, te voy a seguir amando. Habrá noches en las que las nubes la tapen y no puedas verla, pero eso no significa que haya dejado de existir. Y así quiero que entiendas mi amor por vos: aunque a veces no puedas sentirlo tan cerca o la vida nos ponga dificultades, nunca dudes de que sigue ahí, tan fuerte como siempre.
+
+Sé que la distancia sigue siendo una dificultad que quisiera resolver con todo mi corazón, pero por el momento no puedo. Aun así, te elijo una y otra y otra vez, porque, aunque no pueda tenerte cerquita como quisiera, nunca quiero que dudes de mi amor por vos. ❤️
+
+Cuando veas la luna, mi amor, quiero que te acuerdes de mí. Que vayas donde vayas, al mirar al cielo recuerdes que hay alguien que te ama con todo su corazón y que, a pesar de la distancia, mantiene intacto todo lo que siente por vos. 🌙💗
+
+Porque, así como la luna sigue brillando detrás de las nubes, mi amor por vos seguirá brillando incluso en los días más difíciles.
+
+Te amo muchísimo, mi bebita hermosa. Que estos 8 meses sean solamente una pequeña parte de toda la vida que quiero pasar junto a vos.
+
+Felices 8 meses juntos, mi amor, y que sean muchísimos más. 💗🌙💘
+
+Te amooouu. ♥️♥️</p>
+    <p>Con todo mi amor, ahora y siempre,</p>
+    <div class="firma">alex</div>
+    <div class="orn" style="margin-top:22px">❦</div>
+    <div style="text-align:center"><button class="btn" id="seguir">Sigamos con esto 💞</button></div>
+  </article>
+</section>
+
+<!-- 4. FINAL -->
+<div id="final">
+  <button class="close" id="close" title="Cerrar">✕</button>
+  <div class="polaroid">
+    <div class="photo" id="photo">Aquí irá nuestra foto 📷</div>
+  </div>
+  <div class="tag">Te amo ♥</div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+:root{
+  --bordo:#6b1a2c; --bordo2:#4a1020; --rosa:#f4d8d8; --rosa2:#e9b9c0; --crema:#faefe3; --oro:#b8935a;
+  --script:'Great Vibes','Brush Script MT',cursive; --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:var(--serif);color:var(--crema);background:radial-gradient(ellipse at top,#8a2a3e 0%,var(--bordo) 45%,var(--bordo2) 100%) fixed;background-color:var(--bordo);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;
+  background-image:radial-gradient(var(--rosa) 1.2px,transparent 1.4px);background-size:26px 26px}
+.screen{display:none;min-height:100vh;padding:28px 18px;align-items:center;justify-content:center;flex-direction:column;text-align:center;position:relative}
+.screen.on{display:flex;animation:fade 1s ease}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.frame{max-width:460px;width:100%;padding:34px 26px;background:var(--crema);color:var(--bordo);border-radius:6px;
+  border:2px solid var(--oro);box-shadow:0 0 0 7px var(--crema),0 0 0 9px var(--oro),0 20px 50px rgba(0,0,0,.45);position:relative}
+.frame::before,.frame::after{content:"❦";position:absolute;color:var(--oro);font-size:24px;background:var(--crema);padding:0 8px;left:50%;transform:translateX(-50%)}
+.frame::before{top:-17px}.frame::after{bottom:-17px;transform:translateX(-50%) rotate(180deg)}
+h1{font-family:var(--script);font-weight:400;font-size:46px;margin:0 0 6px;line-height:1.1}
+p.sub{font-style:italic;font-size:19px;margin:0 0 20px;color:#8a4352}
+.seal{font-size:46px;margin-bottom:6px;filter:drop-shadow(0 3px 3px rgba(107,26,44,.35))}
+input{width:100%;font:inherit;font-size:20px;text-align:center;padding:12px;border:1.5px solid var(--rosa2);border-radius:4px;background:#fff8f3;color:var(--bordo);outline:none}
+input:focus{border-color:var(--bordo);box-shadow:0 0 0 3px var(--rosa)}
+button.btn{font:inherit;font-size:20px;letter-spacing:.04em;margin-top:16px;padding:12px 30px;border-radius:40px;cursor:pointer;
+  background:linear-gradient(180deg,#8a2a3e,var(--bordo));color:var(--crema);border:1.5px solid var(--oro);box-shadow:0 6px 16px rgba(107,26,44,.4);transition:transform .2s,box-shadow .2s}
+button.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(107,26,44,.5)}
+.hint{font-size:15px;color:#a46a76;margin-top:14px;font-style:italic}
+
+/* corazón roto */
+#broken{display:none;margin-top:18px;animation:fade .5s}
+#broken.on{display:block}
+#broken svg{width:110px;height:110px;animation:shake .6s}
+#broken .l{animation:splitL 1s .3s forwards}#broken .r{animation:splitR 1s .3s forwards}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-10px)}40%{transform:translateX(10px)}60%{transform:translateX(-7px)}80%{transform:translateX(7px)}}
+@keyframes splitL{to{transform:translate(-7px,5px) rotate(-8deg)}}
+@keyframes splitR{to{transform:translate(7px,8px) rotate(9deg)}}
+#broken p{margin:6px 0 0;font-style:italic;font-size:19px}
+
+/* canción */
+.vinyl{width:150px;height:150px;border-radius:50%;margin:0 auto 18px;background:radial-gradient(circle,var(--rosa2) 0 16%,var(--bordo2) 17% 19%,#2a0a13 20% 100%);
+  border:3px solid var(--oro);box-shadow:0 8px 20px rgba(0,0,0,.4);position:relative}
+.vinyl::after{content:"♥";position:absolute;inset:0;display:grid;place-items:center;color:var(--bordo);font-size:26px}
+.vinyl.spin{animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* carta */
+.letter{max-width:560px;width:100%;margin:20px auto;padding:44px 30px;background:linear-gradient(180deg,#fff6ec,var(--crema));color:#4a1624;border-radius:4px;
+  border:1px solid var(--oro);box-shadow:0 0 0 6px var(--rosa),0 0 0 7px var(--oro),0 20px 50px rgba(0,0,0,.5);text-align:left;position:relative}
+.letter h2{font-family:var(--script);font-weight:400;font-size:40px;margin:0 0 14px;color:var(--bordo);text-align:center}
+.letter p{font-size:21px;line-height:1.65;margin:0 0 14px}
+.letter .firma{font-family:var(--script);font-size:38px;color:var(--bordo);text-align:right;margin-top:22px}
+.orn{text-align:center;color:var(--oro);letter-spacing:.5em;margin:6px 0 18px}
+.mini{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top,0px));z-index:5;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--oro);
+  background:var(--bordo2);color:var(--crema);font-size:20px;cursor:pointer;display:none}
+.mini.on{display:block}
+
+/* final */
+#final{position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px;
+  background:radial-gradient(ellipse at center,rgba(138,42,62,.96),rgba(60,10,24,.98));overflow:hidden}
+#final.on{display:flex;animation:fade .8s}
+.polaroid{background:var(--crema);padding:10px;border:2px solid var(--oro);box-shadow:0 0 0 6px var(--crema),0 25px 60px rgba(0,0,0,.6);
+  width:min(340px,80vw);transform:rotate(-3deg) scale(.2);opacity:0;animation:pop 1.6s .3s cubic-bezier(.2,1.3,.4,1) forwards;position:relative;z-index:3}
+@keyframes pop{to{transform:rotate(-3deg) scale(1);opacity:1}}
+.photo{width:100%;aspect-ratio:1086/1448;background:var(--rosa) center/cover no-repeat;display:grid;place-items:center;color:var(--bordo);font-style:italic;font-size:18px;padding:16px}
+.polaroid .cap{font-family:var(--script);color:var(--bordo);font-size:34px;margin-top:10px}
+.tag{font-family:var(--script);font-size:44px;margin-top:30px;color:var(--rosa);opacity:0;animation:fade 1.5s 1.6s forwards;z-index:3;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:14px;z-index:4;background:none;border:1.5px solid var(--oro);color:var(--crema);width:42px;height:42px;border-radius:50%;font-size:18px;cursor:pointer}
+.heart{position:fixed;bottom:-40px;z-index:2;pointer-events:none;animation:up linear forwards;user-select:none}
+@keyframes up{0%{transform:translateY(0) translateX(0) rotate(0);opacity:0}10%{opacity:1}100%{transform:translateY(-115vh) translateX(var(--dx)) rotate(var(--rot));opacity:0}}
+@media(max-width:480px){h1{font-size:40px}.letter{padding:36px 22px}.letter p{font-size:20px}}

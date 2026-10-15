@@ -1,0 +1,6 @@
+Pon aquí tus archivos:
+- cancion.mp3  (la canción)
+- foto.jpg     (la foto, mejor vertical)
+
+Si tus archivos tienen otro nombre o formato (por ejemplo .png o .m4a),
+cambia SONG_SRC y PHOTO_SRC arriba de todo en js/script.js.
